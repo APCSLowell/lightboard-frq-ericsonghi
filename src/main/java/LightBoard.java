@@ -14,7 +14,7 @@ public class LightBoard
         for(int j = 0; j < numCols; j++){
             if(Math.random() > 0.4){
                 lights[i][j] = false;
-            else{
+            }else{
                 lights[i][j] = true;
             }
         }
@@ -52,6 +52,7 @@ public boolean evaluateLight(int row, int col){
     }
   }  
 }
+  
   public boolean[][] getLights()
   {
     return lights;
