@@ -47,10 +47,9 @@ public boolean evaluateLight(int row, int col){
     }
       if(isV%3 == 0){
         return true;
-      }else{
-      return lights[row][col];
       }
   }  
+  return lights[row][col];
 }
   
   public boolean[][] getLights()
