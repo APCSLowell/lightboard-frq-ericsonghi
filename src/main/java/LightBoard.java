@@ -26,33 +26,23 @@ public class LightBoard
    *  Precondition: row and col are valid indexes in lights.
    */
 public boolean evaluateLight(int row, int col){
-    int isValid = 0;
-    int isV = 0;
-    if(lights[row][col] == true){
-      for(int i = 0; i < lights[0].length; i++){
+    int howmany = 0;
+  for(int i = 0; i < lights[0].length; i++){
         if(lights[i][col] == true){
-          isValid++;
+          howmany++;
         }
       }
-      if((isValid - 1)%2 == 0){
-        return false;
-      }
-    }else{
-      if(lights[row][col] == false){
-      for(int t = 0; t < lights[0].length; t++){
-        if(lights[t][col] == true){
-          isV++;
-        }
-      }
-    }
-      if(isV%3 == 0){
-        return true;
-      }else{
-        return lights[row][col];
-  }  
+   if((howmany - 1)%2 == 0){
+     return false;
+   }else if(howmany%3 == 0){
+     return true;
+   }else{
+     return lights[row][col];
+   }
 }
-  return lights[row][col];
-}
+
+
+
   
   public boolean[][] getLights()
   {
