@@ -34,7 +34,7 @@ public boolean evaluateLight(int row, int col){
       }
    if((howmany - 1)%2 == 0 && lights[row][col] == true){
      return false;
-   }else if(howmany%3 == 0 && lights[row][col] == false){
+   }else if((howmany - 1)%3 == 0 && lights[row][col] == false){
      return true;
    }else{
      return lights[row][col];
