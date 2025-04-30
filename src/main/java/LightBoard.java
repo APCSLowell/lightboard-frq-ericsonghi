@@ -8,8 +8,7 @@ public class LightBoard
    * Precondition: numRows > 0, numCols > 0
    * Postcondition: each light has a 40% probability of being set to on.
    */
-  public LightBoard(int numRows, int numCols)
-  {
+  public LightBoard(int numRows, int numCols){
     lights = new boolean [numRows][numCols];
     for(int i = 0; i < numRows; i++){
         for(int j = 0; j < numCols; j++){
@@ -26,8 +25,7 @@ public class LightBoard
    *  as described in part (b).
    *  Precondition: row and col are valid indexes in lights.
    */
-  public boolean evaluateLight(int row, int col)
-  {
+public boolean evaluateLight(int row, int col){
     int isValid = 0;
     int isV = 0;
     if(lights[row][col] == true){
@@ -39,7 +37,8 @@ public class LightBoard
       if((isValid - 1)%2 == 0){
         return false;
       }
-    }else if(lights[row][col] == false){
+    }else{
+      if(lights[row][col] == false){
       for(int t = 0; i < lights[0].length; i++){
         if(lights[t][col] == true){
           isV++;
@@ -47,13 +46,12 @@ public class LightBoard
       }
       if(isV%3 == 0){
         return true;
-      }
-    }else{
+      }else{
       return lights[row][col];
+      }
     }
-   
- 
-  }
+  }  
+}
   public boolean[][] getLights()
   {
     return lights;
