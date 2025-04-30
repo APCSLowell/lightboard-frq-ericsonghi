@@ -44,12 +44,12 @@ public boolean evaluateLight(int row, int col){
           isV++;
         }
       }
+    }
       if(isV%3 == 0){
         return true;
       }else{
       return lights[row][col];
       }
-    }
   }  
 }
   
