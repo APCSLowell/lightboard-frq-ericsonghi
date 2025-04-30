@@ -39,7 +39,7 @@ public boolean evaluateLight(int row, int col){
       }
     }else{
       if(lights[row][col] == false){
-      for(int t = 0; t < lights[0].length; i++){
+      for(int t = 0; t < lights[0].length; t++){
         if(lights[t][col] == true){
           isV++;
         }
