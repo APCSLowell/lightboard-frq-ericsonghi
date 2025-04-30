@@ -51,6 +51,7 @@ public boolean evaluateLight(int row, int col){
         return lights[row][col];
   }  
 }
+  return lights[row][col];
 }
   
   public boolean[][] getLights()
