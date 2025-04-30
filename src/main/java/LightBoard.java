@@ -32,9 +32,9 @@ public boolean evaluateLight(int row, int col){
           howmany++;
         }
       }
-   if((howmany - 1)%2 == 0){
+   if((howmany - 1)%2 == 0 && lights[i][col] == true){
      return false;
-   }else if(howmany%3 == 0){
+   }else if(howmany%3 == 0 && lights[i][col] == false){
      return true;
    }else{
      return lights[row][col];
