@@ -25,7 +25,7 @@ public boolean evaluateLight(int row, int col) {
   int howmany = 0;
 
   for (int i = 0; i < lights.length; i++) {
-    if (lights[i][col]) {
+    if (i != row && lights[i][col]) {
       howmany++;
     }
   }
@@ -38,19 +38,6 @@ public boolean evaluateLight(int row, int col) {
     return lights[row][col];
   }
 }
-
-
-    if (howmany % 2 == 0 && lights[row][col]) {
-      return false;
-    } else if (howmany % 3 == 0 && !lights[row][col]) {
-      return true;
-    } else {
-      return lights[row][col];
-    }
-  }
-
-
-
 
   
   public boolean[][] getLights()
