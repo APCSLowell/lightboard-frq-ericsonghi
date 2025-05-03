@@ -27,19 +27,22 @@ public class LightBoard
    */
 public boolean evaluateLight(int row, int col){
     int howmany = 0;
-  for(int i = 0; i < lights.length; i++){
+
+    for(int i = 0; i < lights.length; i++){
         if(i != row && lights[i][col]){
-          howmany++;
+            howmany++;
         }
-      }
-   if((howmany - 1)%2 == 0 && lights[row][col] == true){
-     return false;
-   }else if((howmany - 1)%3 == 0 && lights[row][col] == false){
-     return true;
-   }else{
-     return lights[row][col];
-   }
+    }
+
+    if(howmany % 2 == 0 && lights[row][col]){
+        return false;
+    }else if (howmany % 3 == 0 && !lights[row][col]){
+        return true;
+    }else{
+        return lights[row][col];
+    }
 }
+
 
 
 
