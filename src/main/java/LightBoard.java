@@ -22,22 +22,26 @@ public class LightBoard
    *  Precondition: row and col are valid indexes in lights.
    */
 public boolean evaluateLight(int row, int col) {
-  int howmany = 0;
-
-  for (int i = 0; i < lights.length; i++) {
-    if (i != row && lights[i][col]) {
-      howmany++;
+  int onCount = 0;
+  for (int r = 0; r < lights.length; r++) {
+    if (lights[r][col]) {
+      onCount++;
     }
   }
 
-  if (lights[row][col] && howmany % 2 == 0) {
-    return false;
-  } else if (!lights[row][col] && howmany % 3 == 0) {
-    return true;
+  if (lights[row][col]) {
+    if (onCount % 2 == 0) {
+      return false;
+    }
   } else {
-    return lights[row][col];
+    if (onCount % 3 == 0) {
+      return true;
+    }
   }
+
+  return lights[row][col];
 }
+
 
   
   public boolean[][] getLights()
