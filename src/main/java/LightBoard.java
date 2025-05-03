@@ -8,16 +8,12 @@ public class LightBoard
    * Precondition: numRows > 0, numCols > 0
    * Postcondition: each light has a 40% probability of being set to on.
    */
-  public LightBoard(int numRows, int numCols){
-    lights = new boolean [numRows][numCols];
-    for(int i = 0; i < numRows; i++){
-        for(int j = 0; j < numCols; j++){
-            if(Math.random() > 0.4){
-                lights[i][j] = false;
-            }else{
-                lights[i][j] = true;
-            }
-        }
+  public LightBoard(int numRows, int numCols) {
+    lights = new boolean[numRows][numCols];
+    for (int i = 0; i < numRows; i++) {
+      for (int j = 0; j < numCols; j++) {
+        lights[i][j] = Math.random() <= 0.4;
+      }
     }
   }
 
